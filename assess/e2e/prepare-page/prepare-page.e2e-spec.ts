@@ -1,4 +1,5 @@
 import { PreparePage } from "./prepare-page.po";
+import {by, element} from "protractor";
 
 describe('Prepare Page', () => {
   let page: PreparePage;
@@ -16,6 +17,12 @@ describe('Prepare Page', () => {
     page.navigateTo();
     page.getPrepareButton().click();
     expect(page.getPrepareTitleText()).toEqual('Preparing for an assessment');
+  });
+
+  it('should display 7 hyperlinks in the Compliance section', () => {
+    page.navigateTo();
+    let linkCount = element.all(by.css('app-how-to-prepare a'));
+    expect(linkCount.count()).toBe(7);
   });
 
 });
