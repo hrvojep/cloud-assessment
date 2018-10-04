@@ -13,4 +13,12 @@ export class AboutPage {
     return element(by.css('app-about h2')).getText();
   }
 
+  getAboutQuestionText() {
+    return element(by.css('app-about h3')).getText();
+  }
+
+  getAboutParagraphText() {
+    return element(by.css('app-about p')).isDisplayed();
+  }
+
 }
