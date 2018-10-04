@@ -1,4 +1,5 @@
 import { AboutPage } from "./about-page.po";
+import {by, element} from "protractor";
 
 describe('About Page', () => {
   let page: AboutPage;
@@ -26,6 +27,12 @@ describe('About Page', () => {
     page.navigateTo();
     page.getAboutButton().click();
     expect(page.getAboutTitleText()).toEqual('About');
+  });
+
+  it('should display 2 hyperlinks in the How long will it take? section', () => {
+    page.navigateTo();
+    let linkCount = element.all(by.css('app-about a'));
+    expect(linkCount.count()).toBe(2);
   });
 
 
