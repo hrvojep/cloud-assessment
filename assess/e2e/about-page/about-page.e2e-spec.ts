@@ -1,5 +1,4 @@
 import { AboutPage } from "./about-page.po";
-import {by, element} from "protractor";
 
 describe('About Page', () => {
   let page: AboutPage;

@@ -1,5 +1,4 @@
 import { PreparePage } from "./prepare-page.po";
-import {by, element} from "protractor";
 
 describe('Prepare Page', () => {
   let page: PreparePage;
