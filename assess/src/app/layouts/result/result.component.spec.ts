@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ResultComponent } from './result.component';
+import {ReportAccordionItemComponent} from "../../components/report-accordion-item/report-accordion-item.component";
+import {WorkFlowService} from "../../services/work-flow.service";
+import {LocalStorageService} from "../../services/local-storage.service";
+import {SubmitServiceService} from "../../services/submit-service.service";
+import {HttpClient, HttpHandler} from "@angular/common/http";
 
 describe('ResultComponent', () => {
   let component: ResultComponent;
@@ -8,7 +13,17 @@ describe('ResultComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResultComponent ]
+      declarations: [
+        ResultComponent,
+        ReportAccordionItemComponent
+      ],
+      providers: [
+        WorkFlowService,
+        LocalStorageService,
+        SubmitServiceService,
+        HttpClient,
+        HttpHandler
+      ]
     })
     .compileComponents();
   }));
